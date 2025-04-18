@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mierp>
+    <data noupdate="0">
+        <record model="ir.actions.act_window" id="mi_dashboard_action">
+            <field name="name">Dashboard</field>
+            <field name="path">mi-dashboard-view</field>
+            <field name="res_model">mi.dashboard</field>
+            <field name="view_mode">midashboard</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window" id="mi_analysis_action">
+            <field name="name">Analysis</field>
+            <field name="path">mi-analysis-view</field>
+            <field name="res_model">mi.analysis</field>
+            <field name="view_mode">mianalysis</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</mierp>

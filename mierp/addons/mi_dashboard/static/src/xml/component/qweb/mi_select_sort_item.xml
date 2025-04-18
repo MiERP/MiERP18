@@ -1,0 +1,31 @@
+<template>
+    <div t-name="miCurrentSortItem" class="mi_current_sort_item mi_item mi_btn mi_btn_wlda mi_w100 mi_rd8 active" t-att-data-id="id" t-att-data-name="name">
+        <span class="material-icons-outlined mi_btn_icon_left">
+            <t t-esc="field_icon"/>
+        </span>
+        <span class="mi_text mi_block_left" t-att-title="name">
+            <t t-esc="name"/>
+        </span>
+        <span t-att-data-sort_id="sort_id" class="mi_remove_sort_item material-icons mi_btn_icon_right mi_hover_highlight" t-esc="'highlight_off'"/>
+        <!-- Sort -->
+        <div t-att-class="'mi_block_right dropdown mi_dropdown mi_sort_'+sort">
+            <div class="dropdown-toggle" id="dropdownSort" data-toggle="dropdown">
+                <span class="material-icons mi_btn_icon_right" t-att-title="sort == 'asc' ? 'Ascending' : 'Descending'" t-esc="'sort'"/>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownSort">
+                <a class="dropdown-item mi_select_sort_direction" data-sort="asc" t-att-data-sort_id="sort_id">Asc</a>
+                <a class="dropdown-item mi_select_sort_direction" data-sort="desc" t-att-data-sort_id="sort_id">Desc</a>
+            </div>
+        </div>
+        <div style="clear:both"/>
+    </div>
+    <div t-name="miSelectSortItem" class="mi_select_sort_item mi_item mi_btn mi_btn_wlda mi_w100 mi_rd" t-att-data-id="id" t-att-data-name="name">
+        <span class="material-icons-outlined mi_btn_icon_left">
+            <t t-esc="field_icon"/>
+        </span>
+        <span class="mi_text mi_block_left" t-att-title="name">
+            <t t-esc="name"/>
+        </span>
+        <div style="clear:both"/>
+    </div>
+</template>

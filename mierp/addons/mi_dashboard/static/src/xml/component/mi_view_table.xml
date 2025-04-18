@@ -1,0 +1,5 @@
+<template>
+    <div t-name="miViewTable" class="mi_view_table">
+        <div class="mi_view_table_grid"></div>
+    </div>
+</template>

@@ -1,0 +1,17 @@
+<mierp>
+    <t t-name="spreadsheet_edition.mierpBarChartConfigPanel"
+        t-inherit="spreadsheet_edition.CommonmierpChartConfigPanel"
+        t-inherit-mode="primary"
+    >
+        <xpath expr="//Section[1]" position="before">
+            <Section class="'pt-0'">
+                <Checkbox
+                    name="'stackedBar'"
+                    label="chartTerms.StackedBarChart"
+                    value="props.definition.stacked"
+                    onChange.bind="onUpdateStacked"
+                />
+            </Section>
+        </xpath>
+    </t>
+</mierp>

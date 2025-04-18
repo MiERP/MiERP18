@@ -1,0 +1,5 @@
+/var/log/mierp/*.log {
+    copytruncate
+    missingok
+    notifempty
+}

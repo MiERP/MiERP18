@@ -1,0 +1,4 @@
+<template>
+    <div t-name="miSelectSort" class="mi_select_sort">
+    </div>
+</template>

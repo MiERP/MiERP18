@@ -1,0 +1,63 @@
+<template>
+    <div t-name="miViewDashboard" class="mi_view_dashboard">
+        <!-- Explore -->
+        <!-- <div class="mi_dialog" style="display:none;"> -->
+        <div class="mi_view_dashboard_ask_container" style="display:none;">
+            <div class="mi_view_dashboard_ask_discuss">
+                <div class="mi_view_dashboard_ask_bg" style="display:none;"></div>
+                <div class="mi_view_dashboard_ask_header" style="">
+                    <span class="material-icons">magic_button</span>
+                    <span class="mi_view_dashboard_ask_header_title">Ask AI to Explore and Generate
+                        Analysis</span>
+                    <!-- <span class="mi_view_dashboard_ask_header_table">Table <span
+                    style="font-weight:600">Undefined</span></span> -->
+                    <div class="mi_view_dashboard_ask_header_table">
+                        <span>Table </span>
+                        <div class="mi_dashboard_table_selection">
+                            <input type="hidden" class="mi_wfull mi_select2"
+                                id="custom_table_selection" />
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <div class="mi_view_dashboard_ask">
+                </div>
+                <div class="mi_view_dashboard_ask_footer">
+                    <div class="mi_view_dashboard_ask_quick_messages"></div>
+                    <textarea class="mi_view_dashboard_ask_input">
+
+                    </textarea>
+                    <div class="mi_view_dashboard_ask_btn">
+                        <span class="material-icons mi_btn_icon " t-esc="'magic_button'" />
+                    </div>
+                </div>
+            </div>
+            <div class="mi_view_dashboard_ask_result">
+                <div class="mi_view_dashboard_ask_result_title" style="display:none;">
+                    <div class="mi_view_dashboard_ask_result_add_to_dashboard">
+                        <span class="material-icons mi_btn_icon " t-esc="'add'" /> Add to Dashboard </div>
+                    <div class="mi_view_dashboard_ask_result_configuration">
+                        <span class="material-icons mi_btn_icon " t-esc="'settings'" />
+                        Configuration </div>
+                </div>
+                <div class="mi_view_dashboard_ask_result_chart mi_dashboard_block_content">
+                </div>
+                <div class="mi_view_dashboard_ask_result_explanation">
+                </div>
+            </div>
+        </div>
+        <!-- Drag & Drop Uploader -->
+        <div id="mi_dashboard_file_uploader">
+            Drag &amp; Drop Files Here
+        </div>
+        <!-- Analysis Dialog (Manual, Deprecated)-->
+        <div class="mi_dialog mi_view_analysis_dialog" style="display:none;">
+            <div class="mi_view_analysis_dialog_bg"></div>
+            <div class="mi_view_analysis_dialog_main">
+            </div>
+        </div>
+        <!-- Main -->
+        <div class="mi_view_dashboard_grid grid-stack">
+        </div>
+    </div>
+</template>

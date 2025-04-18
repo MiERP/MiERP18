@@ -1,0 +1,57 @@
+<mierp>
+
+    <t t-name="spreadsheet_edition.mierpMenuChartPanelSection">
+        <Section>
+            <t t-set-slot="title">Link to mierp menu</t>
+            <IrMenuSelector
+                menuId="mierpMenuId"
+                onValueChanged.bind="updatemierpLink"/>
+        </Section>
+    </t>
+
+    <t t-name="spreadsheet_edition.GenericChartConfigPanel"
+        t-inherit="o-spreadsheet-GenericChartConfigPanel"
+        t-inherit-mode="extension"
+       >
+        <xpath expr="//ChartErrorSection" position="before">
+            <t t-call="spreadsheet_edition.mierpMenuChartPanelSection"/>
+        </xpath>
+    </t>
+
+    <t t-name="spreadsheet_edition.BarConfigPanel"
+        t-inherit="o-spreadsheet-BarConfigPanel"
+        t-inherit-mode="extension"
+       >
+        <xpath expr="//ChartErrorSection" position="before">
+            <t t-call="spreadsheet_edition.mierpMenuChartPanelSection"/>
+        </xpath>
+    </t>
+
+    <t t-name="spreadsheet_edition.LineConfigPanel"
+        t-inherit="o-spreadsheet-LineConfigPanel"
+        t-inherit-mode="extension"
+       >
+        <xpath expr="//ChartErrorSection" position="before">
+            <t t-call="spreadsheet_edition.mierpMenuChartPanelSection"/>
+        </xpath>
+    </t>
+
+    <t t-name="spreadsheet_edition.ScorecardChartConfigPanel"
+        t-inherit="o-spreadsheet-ScorecardChartConfigPanel"
+        t-inherit-mode="extension"
+       >
+        <xpath expr="//ChartErrorSection" position="before">
+            <t t-call="spreadsheet_edition.mierpMenuChartPanelSection"/>
+        </xpath>
+    </t>
+
+    <t t-name="spreadsheet_edition.GaugeChartConfigPanel"
+        t-inherit="o-spreadsheet-GaugeChartConfigPanel"
+        t-inherit-mode="extension"
+       >
+        <xpath expr="//ChartErrorSection" position="before">
+            <t t-call="spreadsheet_edition.mierpMenuChartPanelSection"/>
+        </xpath>
+    </t>
+
+</mierp>

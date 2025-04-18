@@ -1,0 +1,193 @@
+/* Filter */
+.mi_analysis_filter_temp_container {
+    display: block;
+    float: right;
+}
+.mi_analysis_filter_temp{
+    float: right;
+    display: flex;
+    border-radius: 6px;
+    margin-left: 2px;
+}
+.mi_analysis_filter_temp .mi_dashboard_filter_content{
+    min-width: 0px;
+    width: 0px;
+    opacity: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+/* .mi_analysis_filter_temp .mi_dashboard_filter_content a.select2-choice {
+    display: none;
+} */
+.mi_analysis_filter_temp .mi_analysis_filter_temp_title {
+    font-weight: 600;
+    font-size: 13px;
+    height: 32px;
+    line-height: 30px;
+    background: transparent;
+    border: 1px solid transparent;
+    display: block;
+    color: #AAAAAA;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+.mi_analysis_filter_temp:hover .mi_analysis_filter_temp_title,
+.mi_analysis_filter_temp.active .mi_analysis_filter_temp_title  {
+    font-weight: 600;
+    font-size: 13px;
+    height: 32px;
+    line-height: 30px;
+    background: white;
+    border: 1px solid #ced4da;
+    display: block;
+    color: #666666;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+.mi_analysis_filter_temp.active .mi_analysis_filter_temp_title  {
+    border-right: none;
+}
+.mi_analysis_filter_temp .mi_input {
+    border: none;
+    width: 100px;
+    padding: 0px;
+    font-weight: 300;
+    color: #666666;
+}
+.mi_analysis_filter_temp .mi_input::placeholder {
+    color: #444;
+    font-weight: 300;
+}
+.mi_analysis_filter_temp .mi_select2 .select2-choices {
+    border: none;
+}
+.mi_analysis_filter_temp .mi_select2.select2-container-multi .select2-choices .select2-search-field input {
+    margin-left: 10px;
+}
+.mi_analysis_filter_temp .o_datepicker {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.mi_analysis_filter_temp_content .mi_dropdown {
+    height: 30px;
+    line-height: 30px;
+    margin: 0px 10px;
+}
+.mi_analysis_filter_temp_title.mi_dropdown {
+    margin: 0px;
+}
+.mi_analysis_filter_temp .mi_dropdown button {
+    font-weight: 300;
+    background: none;
+    outline: none;
+    color: #666666;
+    font-size: 13px;
+}
+.mi_analysis_filter_temp .mi_dropdown .dropdown-toggle::after {
+    vertical-align: 0.1em;
+}
+.mi_analysis_filter_temp span.material-icons-outlined {
+    line-height: 30px;
+    font-size: 18px;
+    padding: 0px 6px;
+}
+.mi_analysis_filter_temp .mi_analysis_filter_temp_title .dropdown-toggle::after {
+    display: none;
+}
+.mi_analysis_filter_temp .dropdown-item {
+    cursor: pointer;
+    height: 32px;
+    line-height: 16px;
+}
+.mi_analysis_filter_temp .mi_analysis_filter_temp_title .dropdown-item.active {
+    background: #666666;
+    color: white;
+}
+.mi_analysis_filter_temp {
+    /* opacity: 0.2; */
+    /* overflow: hidden; */
+}
+.mi_analysis_filter_temp:hover,
+.mi_analysis_filter_temp.active {
+    opacity: 1;
+}
+.mi_analysis_filter_temp_content {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    height: 32px;
+    overflow: hidden;
+    width: 0px;
+    border: none;
+}
+.mi_analysis_filter_temp.active .mi_analysis_filter_temp_title {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.mi_analysis_filter_temp.active .mi_analysis_filter_temp_content{
+    overflow: visible;
+    width: auto;
+    border: 1px solid #ced4da;
+}
+
+.mi_view .mi_analysis_filter_temp_content input.mi_datepicker {
+    color: #666666;
+}
+.mi_view .mi_analysis_filter_temp_content  .mi_datepicker::placeholder {
+    color: #666666;
+    opacity: 1;
+}
+
+.mi_analysis_filter_temp_content .dynamic_filter_button {
+    border-radius: 5px !important;
+    border: 1px solid #666666;
+    height: 25px;
+    margin-inline: 5px;
+    margin-block: 2.5px;
+    padding-right: 0;
+    background-color: unset;
+}
+.mi_analysis_filter_temp_content .dynamic_filter_button .close-btn{
+    border-left: 1px solid #d44c59;
+    color: #d44c59;
+    padding-inline: 5px;
+    font-size: 13px;
+    background-color: unset;
+}
+
+.mi_analysis_filter_temp .input_container {
+    position: relative;
+    display: inline-block;
+}
+
+.mi_analysis_filter_temp .input_container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+#mi_analysis_filter_temp_limit #mi_limit_input {
+    border: 0px;
+    height: 32px;
+}
+
+#mi_analysis_filter_temp_limit #mi_limit_input input#mi_limit_input_number {
+    width: 80px;
+    height: 32px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    font-size: 13px;
+}

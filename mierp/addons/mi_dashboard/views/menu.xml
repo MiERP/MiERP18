@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mierp>
+    <data noupdate="0">
+        <menuitem id="mi_dashboard_menu" parent="mi_data.mi_dashboard_root" name="Dashboard" sequence="10"  action="mi_dashboard_action" />
+        <menuitem id="mi_analysis_menu" parent="mi_data.mi_dashboard_root" name="Analysis" sequence="20"  action="mi_analysis_action" />
+    </data>
+</mierp>

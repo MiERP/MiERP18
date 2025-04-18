@@ -1,0 +1,6 @@
+<templates>
+    <t t-name="mi_dashboard.miAnalysisWidget" owl="1">
+        <div t-ref="widgetContainer" class="mi_dashboard_block_content">
+        </div>
+    </t>
+</templates>

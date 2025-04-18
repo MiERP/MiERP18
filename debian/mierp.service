@@ -1,0 +1,14 @@
+[Unit]
+Description=mierp Open Source ERP and CRM
+After=network.target
+
+[Service]
+Type=simple
+User=mierp
+Group=mierp
+ExecStart=/usr/bin/mierp --config /etc/mierp/mierp.conf --logfile /var/log/mierp/mierp-server.log
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
+

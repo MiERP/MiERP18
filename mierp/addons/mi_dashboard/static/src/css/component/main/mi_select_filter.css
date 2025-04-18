@@ -1,0 +1,10 @@
+.mi_current_filter_item .dropdown-toggle {
+    text-transform: uppercase;
+    font-size: 10px !important;
+    font-weight: 600;
+    line-height: 20px;
+}
+.mi_current_filter .mi_update_current_filter_item {
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}

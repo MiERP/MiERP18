@@ -1,0 +1,6 @@
+<template>
+    <div t-name="miDialog" class="mi_dialog">
+        <div class="mi_dialog_bg"></div>
+        <div class="mi_dialog_content"></div>
+    </div>
+</template>

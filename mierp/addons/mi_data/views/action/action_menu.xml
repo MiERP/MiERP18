@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mierp>
+    <data noupdate="0">
+        <record model="ir.actions.act_window" id="mi_data_source_action">
+            <field name="name">Data Source</field>
+            <field name="path">mi-data-source</field>
+            <field name="res_model">mi.data.source</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'active_test':False}</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mi_table_action">
+            <field name="name">Table</field>
+            <field name="path">mi-table</field>
+            <field name="res_model">mi.table</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_mi_table_filter"/>
+            <field name="context">{'search_default_filter_user_defined': 1}</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mi_analysis_action">
+            <field name="name">Analysis</field>
+            <field name="path">mi-analysis</field>
+            <field name="res_model">mi.analysis</field>
+            <field name="view_mode">list,form</field>
+            <field name="view_ids" eval="[(5, 0, 0), 
+            (0, 0, {'view_mode': 'list'}), 
+            (0, 0, {'view_mode': 'form', 'view_id': ref('mi_data.mi_analysis_form_without_footer')})]"/>
+
+        </record>
+    </data>
+</mierp>

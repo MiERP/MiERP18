@@ -1,0 +1,115 @@
+<template>
+    <div t-name="miSelectAnalysis" class="mi_dialog">
+        <div class="mi_dialog_bg"></div>
+        <div class="mi_dialog_content">
+            <div class="mi_dialog_header">
+                <div class="mi_search_analysis_container" style="flex:1">
+                    <span style="display:flex; flex : 2;">
+                        <div class="mi_search_analysis_category dropdown mi_dropdown" style="flex : 1;" title="Filter By Category">
+                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="material-icons" t-esc="'manage_search'"/>
+                                <span class="title">Category</span>
+                            </span>
+                            <div class="dropdown-menu">
+                            </div>
+                        </div>
+                        <div class="mi_search_analysis_visual dropdown mi_dropdown" style="flex : 1;" title="Filter By Visual Type">
+                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="material-icons" t-esc="'query_stats'"/>
+                                <span class="title">Visual Type</span>
+                            </span>
+                            <div class="dropdown-menu">
+                            </div>
+                        </div>
+                    </span>
+
+                    <div class="mi-input-group" style="flex : 4;">
+                        <span class="mi-input-group-pretend material-icons-outlined" t-esc="'search'"/>
+                        <input class="mi-input-text mi_search_analysis_name" placeholder="Search Analysis Name.."/>
+                    </div>
+                    <!-- <input class="mi_search_analysis_name" placeholder="Search Analysis Name"/> -->
+                </div>
+                <!-- <button type="button" id="mi_dialog_close_btn" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="material-icons-outlined">close</span>
+                </button> -->
+            </div>
+            <div class="mi_select_analysis_item_container mi_dialog_body"/>
+            <div style="clear:both;"/>
+            <!-- Form -->
+            <div class="mi_form_analysis_container" style="display:none;">
+                <div class="mi_form_header">
+                    <div class="mi_form_header_title mi_input_analysis">
+                        <span class="material-icons" t-esc="'bar_chart'"/>
+                        <span class="mi_title"><input class="mi_input" placeholder="Analysis"/></span>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="mi_block_right mi_inline_button mi_action_analysis_save">
+                        <span class="material-icons mi_btn_icon_left" t-esc="'done'"/>
+                        Save
+                    </div>
+                    <div class="mi_block_right mi_inline_button mi_action_analysis_close neutral">
+                        <span class="material-icons mi_btn_icon_left" t-esc="'undo'"/>
+                        Back
+                    </div>
+                    <div class="mi_block_right mi_inline_button mi_action_analysis_delete neutral">
+                        <span class="material-icons mi_btn_icon_left" t-esc="'close'"/>
+                        Delete
+                    </div>
+                    <div style="clear:both;"/>
+                </div>
+                <div class="mi_form_header mi_select_data_source">
+                    <div class="mi_form_header_title">
+                        <span class="material-icons" t-esc="'cloud'"/>
+                        <input type="hidden" class="mi_w200 mi_block_left mi_select2" id="mi_select2_data_source"/>
+                        <input type="hidden" class="mi_w200 mi_block_left mi_select2" id="mi_select2_table"/>
+                        <input style="display:none;" class="mi_block_left mi_input mi_input_table" placeholder="New Table"/>
+                        <div style="display:none;" class="mi_block_left mi_inline_button mi_action_table_edit neutral">
+                            <span class="material-icons mi_btn_icon_left" t-esc="'edit'"/>
+                            Edit Table
+                        </div>
+                        <div style="display:none;" class="mi_block_left mi_inline_button mi_action_table_new">
+                            <span class="material-icons mi_btn_icon_left" t-esc="'add'"/>
+                            New Table
+                        </div>
+                        <div style="display:none;" class="mi_block_left mi_inline_button mi_action_table_save">
+                            <span class="material-icons mi_btn_icon_left" t-esc="'done'"/>
+                            Save Table
+                        </div>
+                        <div style="display:none;" class="mi_block_left mi_inline_button mi_action_table_cancel warning">
+                            <span class="material-icons mi_btn_icon_left" t-esc="'close'"/>
+                            Cancel
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <span style="display:none;" class="material-icons mi_action_table_search" title="Activate Other Tables">search</span>
+                    <div style="clear:both;"/>
+                    <div class="mi_form_header_select mi_select_data_source_item_container" style="display:none;">
+                    </div>
+                </div>
+                <div class="mi_form_header mi_form_table_fields">
+                    <div class="mi_form_header_title">
+                        <span class="material-icons" t-esc="'text_fields'"/>
+                        <span class="mi_title">Fields</span>
+                    </div>
+                    <div style="clear:both;"/>
+                    <div class="mi_form_header_select mi_select_field_metric_item_container">
+                    </div>
+                    <div class="mi_form_header_select mi_select_field_dimension_item_container">
+                    </div>
+                    <div style="clear:both;"/>
+                </div>
+                <div class="mi_form_header mi_form_table_query">
+                    <div class="mi_form_header_title">
+                        <span class="material-icons" t-esc="'join_full'"/>
+                        <span class="mi_title">SQL Query</span>
+                    </div>
+                    <span class="material-icons mi_action_table_execute_query" title="Execute Query and Build Schema" t-esc="'done'"/>
+                    <span class="material-icons mi_action_table_test_query" title="Test Query" t-esc="'bug_report'"/>
+                    <!-- <span class="material-icons" title="Duplicate Query to a New Table">content_copy</span> -->
+                    <div style="clear:both;"/>
+                    <div id="mi_query_editor"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

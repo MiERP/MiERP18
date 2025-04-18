@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mierp>
+  <data noupdate="0">
+      <menuitem id="mi_dashboard_root" web_icon="mi_dashboard,static/description/icon.png" name="Analytics" sequence="-2"/>
+      
+      <menuitem id="mi_data_menu" parent="mi_dashboard_root" name="Data Source" sequence="30"/>
+      <menuitem id="mi_data_source_menu" parent="mi_data_menu" name="Data Source" sequence="10" action="mi_data.mi_data_source_action" />
+      <menuitem id="mi_table_menu" parent="mi_data_menu" name="Tables" sequence="20" action="mi_data.mi_table_action" />
+      <menuitem id="mi_schedule_menu" parent="mi_data_menu" name="Scheduler" sequence="30" action="mi_data.ir_cron_act" />
+      <menuitem id="mi_attachment_menu" parent="mi_data_menu" name="Attachments" sequence="40" action="mi_data.action_attachment" groups="mi_data.group_manager_analysis"/>
+      <menuitem id="mi_analysis_data_menu" parent="mi_data_menu" name="Analysis" sequence="100" action="mi_data.mi_analysis_action" />
+      
+      <menuitem id="mi_kpi_menu" parent="mi_data_menu" name="Key Performance Indicator" sequence="200" action="mi_kpi_action" />
+      <menuitem id="mi_kpi_line_menu" parent="mi_data_menu" name="Key Performance Indicator Lines" sequence="210" action="mi_kpi_line_action" />
+  </data>
+</mierp>

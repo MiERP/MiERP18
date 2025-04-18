@@ -1,0 +1,2 @@
+debian/mierp.conf /etc/mierp
+README.md /usr/share/doc/mierp

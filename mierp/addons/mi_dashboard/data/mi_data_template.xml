@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mierp>
+    <data noupdate="1">
+        <function model="mi.data.source" name="create_source_db_mierp"/>
+
+        <!-- Start Block Group: 1. DB mierp Partner Template -->
+        <record model="mi.table" id="mi_table_template_partner">
+            <field name="name">Partners</field>
+            <field name="source_id" search="[('type', '=', 'db_mierp')]"/>
+            <field name="db_query">
+                SELECT 
+	                rp.id,
+                    rp.name,
+                    rp.street,
+                    rp.city,
+                    rcs.name AS state,
+                    rc.name->>'en_US' AS country,
+                    rcp.name AS company,
+                    rp.create_date AS create_date
+                FROM res_partner rp
+                LEFT JOIN res_company rcp ON (rcp.id = rp.company_id)
+                LEFT JOIN res_country_state rcs ON (rcs.id = rp.state_id)
+                LEFT JOIN res_country rc ON (rc.id = rp.country_id);
+            </field>
+        </record>
+
+        <function model="mi.table" name="get_table_fields" eval="[ref('mi_table_template_partner')]">
+        </function>
+
+        <!-- Start Analysis Partner Template: 1. Count Partner By Address -->
+        <record model="mi.analysis" id="mi_analysis_template_partner_by_address">
+            <field name="name">Top Partner By City</field>
+            <field name="method">table_view</field>
+            <field name="source_id" search="[('type', '=', 'db_mierp')]"/>
+            <field name='table_id' ref='mi_table_template_partner'/>
+            <field name='table_view_id' ref='mi_table_template_partner'/>
+            <field name="visual_type_id" ref='mi_dashboard.mi_visual_type_pie'/>
+        </record>
+
+        <record model="mi.analysis.metric" id="mi_analysis_metric_template_partner_by_address">
+            <field name="analysis_id" ref='mi_analysis_template_partner_by_address'/>
+            <field name="field_id" search="[('table_id', '=', ref('mi_table_template_partner')), ('field_name', '=', 'id')]"/>
+            <field name="calculation">count</field>
+            <field name="sort">desc</field>
+        </record>
+
+        <record model="mi.analysis.dimension" id="mi_analysis_dimension_template_partner_by_address">
+            <field name="analysis_id" ref='mi_analysis_template_partner_by_address'/>
+            <field name="field_id" search="[('table_id', '=', ref('mi_table_template_partner')), ('field_name','=', 'city')]"/>
+        </record>
+        <!-- End Analysis Partner Template: 1. Count Partner By Address -->
+
+        <!-- Start Analysis Partner Template: 2. Count Partner By Join Date -->
+        <record model="mi.analysis" id="mi_analysis_template_partner_by_date">
+            <field name="name">Count Partner By Join Date</field>
+            <field name="method">table_view</field>
+            <field name="source_id" search="[('type', '=', 'db_mierp')]"/>
+            <field name='table_id' ref='mi_table_template_partner'/>
+            <field name='table_view_id' ref='mi_table_template_partner'/>
+            <field name="visual_type_id" ref='mi_dashboard.mi_visual_type_row'/>
+        </record>
+
+        <record model="mi.analysis.metric" id="mi_analysis_metric_template_partner_by_date">
+            <field name="analysis_id" ref='mi_analysis_template_partner_by_date'/>
+            <field name="field_id" search="[('table_id', '=', ref('mi_table_template_partner')), ('field_name', '=', 'id')]"/>
+            <field name="calculation">count</field>
+        </record>
+
+        <record model="mi.analysis.dimension" id="mi_analysis_dimension_template_partner_by_date">
+            <field name="analysis_id" ref='mi_analysis_template_partner_by_date'/>
+            <field name="field_id" search="[('table_id', '=', ref('mi_table_template_partner')), ('field_name','=', 'create_date')]"/>
+            <field name="field_format">day</field>
+            <field name="sort">asc</field>
+        </record>
+        <!-- Start Analysis Partner Template: 2. Count Partner By Join Date -->
+
+        <!-- End Block Group: 1. DB mierp Partner Template -->
+        
+        <!-- Create Dashboard -->
+        <record model="mi.dashboard" id="mi_dashboard_template_partner">
+            <field name="name">Example of Partner Dashboard</field>
+            <field name="theme_id" ref='mi_dashboard_theme_contrast'/>
+        </record>
+        <record model="mi.dashboard.block" id="mi_dashboard_block_template_partner_by_date">
+            <field name="dashboard_id" ref='mi_dashboard_template_partner'/>
+            <field name="analysis_id" ref='mi_analysis_template_partner_by_date'/>
+        </record>
+        <record model="mi.dashboard.block" id="mi_dashboard_block_template_partner_by_address">
+            <field name="dashboard_id" ref='mi_dashboard_template_partner'/>
+            <field name="analysis_id" ref='mi_analysis_template_partner_by_address'/>
+        </record>
+        <!-- End Create Dashboard -->
+    </data>
+</mierp>

@@ -1,0 +1,4 @@
+# -*- coding: utf-8 -*-
+# Part of mierp. See LICENSE file for full copyright and licensing details.
+from mierp import api, SUPERUSER_ID
+from . import models

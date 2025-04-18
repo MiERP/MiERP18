@@ -1,0 +1,154 @@
+<template>
+    <div t-name="miConfigAnalysis" class="mi_config_analysis">
+        <div class="mi_select_analysis_container">
+            <div class="mi_select_analysis mi_p20" title="Click to select or create analysis">
+                <div class="mi_title">Select Analysis</div>
+                <div class="mi_subtitle">
+                    Click to select or create analysis
+                </div>
+            </div>
+            <div class="mi_select_analysis_button_container flex-column">
+                <div class="mi_block_left mi_dropdown dropdown">
+                    <span class="material-icons dropdown-toggle" data-toggle="dropdown" t-esc="'edit'"/>
+                    <div class="dropdown-menu mi_dropdown_menu_top_right">
+                        <a class="dropdown-item mi_select_analysis_edit">Configuration</a>
+                        <a class="dropdown-item mi_action_open_data_script_editor">Data Script Editor</a>
+                        <a class="dropdown-item mi_action_open_visual_script_editor">Visual Script Editor</a>
+                    </div>
+                </div>
+                <div class="mi_block_left mi_dropdown dropdown">
+                    <span class="material-icons dropdown-toggle" data-toggle="dropdown" t-esc="'magic_button'"/>
+                    <div class="dropdown-menu mi_dropdown_menu_top_right">
+                        <a class="dropdown-item mi_select_analysis_insight">Get Insights</a>
+                        <a class="dropdown-item mi_select_analysis_explore">Explore Variations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mi_blank_divider mi_divider"/>
+
+        <!-- Data / Visual -->
+        <div class="mi_config_analysis_tab">
+            <div class="mi_tab mi_tab_data active">
+                Data
+            </div>
+            <div class="mi_tab mi_tab_visual">
+                Visual
+            </div>
+            <div style="clear:both"/>
+        </div>
+
+        <!-- Data -->
+        <div id="mi_accordion" class="mi_tab_content_data">
+            <div class="card mi_white mi_divider">
+                <div class="card-header mi_white mi_p10_20">
+                    <div class="mi_current_metric"/>
+                    <div class="mi_add_metric mi_btn mi_btn_wpb collapsed" data-toggle="collapse" data-target="#collapseMetric" aria-expanded="false" aria-controls="collapseMetric">
+                        <span class="material-icons mi_btn_icon_left" t-esc="'numbers'"/> Add Metrics
+                    </div>
+                </div>
+                <div id="collapseMetric" class="collapse" data-parent="#mi_accordion">
+                    <div class="card-body mi_white mi_p10_20 mi_pt0">
+                        <div class="mi_select_metric_container"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mi_white mi_divider">
+                <div class="card-header mi_white mi_p10_20">
+                    <div class="mi_current_dimension"/>
+                    <div class="mi_add_dimension mi_btn mi_btn_wbb collapsed" data-toggle="collapse" data-target="#collapseDimension" aria-expanded="false" aria-controls="collapseDimension">
+                        <span class="material-icons mi_btn_icon_left" t-esc="'show_chart'"/> Add Dimensions
+                    </div>
+                </div>
+                <div id="collapseDimension" class="collapse" data-parent="#mi_accordion">
+                    <div class="card-body mi_white mi_p10_20 mi_pt0">
+                        <div class="mi_select_dimension_container"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mi_white mi_divider" style="display: none;">
+                <div class="card-header mi_white mi_p10_20">
+                    <div class="mi_current_filter" id="mi_accordion_current_filter"/>
+                    <div class="mi_add_filter mi_btn mi_btn_wctb collapsed" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                        <span class="material-icons mi_btn_icon_left" t-esc="'tune'"/> Add Filters
+                    </div>
+                </div>
+                <div id="collapseFilter" class="collapse" data-parent="#mi_accordion">
+                    <div class="card-body mi_white mi_p10_20 mi_pt0">
+                        <div class="mi_select_filter_container" id="mi_accordion_select_filter"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mi_white mi_divider">
+                <div class="card-header mi_white mi_p10_20">
+                    <div class="mi_current_sort"/>
+                    <div class="mi_add_sort mi_btn mi_btn_wdab collapsed" data-toggle="collapse" data-target="#collapseSort" aria-expanded="false" aria-controls="collapseSort">
+                        <span class="material-icons mi_btn_icon_left" t-esc="'swap_vert'"/> Add Sort
+                    </div>
+                </div>
+                <div id="collapseSort" class="collapse" data-parent="#mi_accordion">
+                    <div class="card-body mi_white mi_p10_20 mi_pt0">
+                        <div class="mi_select_sort_container"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mi_white mi_divider mi_change_limit_container" style="display:none;">
+                <div class="card-header mi_white mi_p10_20">
+                    <div class="flex-body">
+                        <label for="mi_change_limit" class="flex-1 col-form-label mi_subtitle">Limit</label>
+                        <div class="input-group flex-1">
+                            <input type="number" class="form-control mi_change_limit" id="mi_change_limit" min="0"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mi_white mi_divider mi_add_dashboard_container" style="display: none">
+                <div class="card-header mi_white mi_p10_20">
+                    <input type="hidden" class="mi_wfull mi_mb10 mi_select2" id="mi_select2_dashboard"/>
+                    <div class="mi_add_dashboard_block mi_btn mi_btn_wbb">
+                        <span class="material-icons mi_btn_icon_left" t-esc="'add'"/> Add to Dashboard
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual -->
+        <div id="mi_accordion" class="mi_tab_content_visual" style="display:none;">
+            <div class="card mi_white mi_divider">
+                <div class="mi_select_visual_container card-body mi_white mi_p10_20 mi_pt0 flex-body">
+                </div>
+                <div class="mi_select_visual_config_container card-body mi_white mi_p10_20 mi_pb0"></div>
+            </div>
+        </div>
+
+        <!-- Insights -->
+        <div id="mi_accordion" class="mi_tab_content_insight" style="display:none;">
+            <div class="card mi_white">
+                <div class="mi_tab_content_insight_title_container" style="display: flex;">
+                    <h4>Insights</h4>
+                    <div style="display: flex;width: 120px;align-items: center;" class="ms-3">
+                        <input type="text" class="form-control" value="English" id="mi_selected_languange" disabled="1"/>
+                        <div class="mi_languange dropdown mi_dropdown">
+                            <span class="material-icons-outlined dropdown-toggle show" data-toggle="dropdown">translate</span>
+                            <div class="dropdown-menu"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="mi_exit_insight">
+                    <span class="material-icons">close</span>
+                </div>
+                <div class="mi_tab_content_insight_container">
+                    
+                </div>
+                <div class="mi_p10_20">
+                    <span class="spinner-border spinner-border-small" style="display:none;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

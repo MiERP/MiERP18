@@ -1,0 +1,4 @@
+<template>
+    <div t-name="miTemplate" class="mi_template">
+    </div>
+</template>
